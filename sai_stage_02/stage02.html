@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Introduction to programming, stage 02</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="I">
+        <h1> Index </h1>
+        <ol>
+            <li>
+                <a href="#lesson-1">Introduction to Programming.</a>
+            </li>
+            <li>
+                <a href="#lesson-2">Variables and strings.</a>
+            </li>
+            <li>
+                <a href="#lesson-3">Input->Function->Output.</a>
+            </li>
+            <li>
+                <a href="#lesson-4">Making decisions.</a>
+                <ul>
+                    <li>
+                        <a href="#lesson-4-1">Using operators to make decisions.</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#lesson-5">Loops.</a>
+                <ul>
+                    <li>
+                        <a href="#lesson-5-1">While Loop.</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#lesson-6"> Debugging </a>
+            </li>
+            <li>
+                <a href="#lesson-7"> Lists </a>
+                <ul>
+                    <li>
+                        <a href="#lesson-7-1">Defining and accessing lists</a>
+                    </li>
+                    <li>
+                        <a href="#lesson-7-2">Mutating lists</a>
+                    </li>
+                    <li>
+                        <a href="#lesson-7-3">Aliasing</a>
+                    </li>
+                    <li>
+                        <a href="#lesson-7-4">Loops on lists</a>
+                    </li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+    <div class="lesson">
+        <div class="concept" id="lesson-1">
+            <div class="concept-title">Programming</div>
+            <div class="concept-description">
+                <p>
+
+                    Programming is core of computer science. Computer is a univeral machine
+                    that can be programmed to do essentially any computation.
+                    For a program to be useful we need to have a sequence
+                    of coherent steps and the power of the computer is
+                    to execute those steps quickly. The language that the
+                    course teaches is Python.
+                    <br/>
+                    <br/> The reason why programming languages like Python exist
+                    is because in natural languages like English or Mandarin
+                    there's ambiguity that exists in the way its spoken
+                    and also they're verbose, but when it comes to programming
+                    languages a complicated task only requires few lines
+                    of code and described in a sequence of steps. The programs
+                    that are written in python, are executed by python
+                    in a language the computer understands.
+                    <br/>
+                    <br/> An important construct in a Language is expressions,
+                    an Expression is a statement which equates to a value.
+                    If an expression does not follow the grammar rules
+                    of the programming language then a syntax error is
+                    thrown. The rules of a language is defined by grammar
+                    and one such grammar notation is Backus Naur Form.
+                    A grammar describes the language in a precise and concise
+                    way.
+
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="lesson">
+        <div class="concept" id="lesson-2">
+            <div class="concept-title">Variables and strings</div>
+            <div class="concept-description">
+                <p>
+
+                    A variable is a name which refers to a value, defined below is how to define
+                    an assignment. A variable refers to a value rather
+                    than equality expression in algebra
+                    <pre>
+name = expression
+</pre> Name is a sequence of letters and numbers. A
+                    variable name can also have underscores.
+                    <pre>
+speed_of_light = 299792458 #speed of light is constant
+days = 49 # assigned to 49 days
+days = days - 1 #now has 48 days, the value the variable refers to changed now
+</pre> String: Sequence of characters within quotes.
+                    <br/>
+                    <pre>
+course = 'Introduction to programming nano degree' #string within single quotes
+course = "Introduction to programming nano degree" #string within double quotes
+</pre> A string within double quote encapsulates a
+                    single quote and a string within a signle quote encapsulates
+                    a double quote.
+                    <br/> Ex: '"Ada', "'Ada"
+                    <br/> Two strings can be concatenated using '+'.
+                    <pre>
+name = 'Vishali' + 'Modali'
+sum = 2 + 2 #adding 2 numbers
+</pre> Indexing strings: Strings are sequences of characters.
+                    <pre>
+name = 'Vishali'
+string[&lt;expression&gt;] #this is a single character
+
+print name[0] # 'V'. Charcter at the first position of the string.
+
+string[&lt;expression&gt;:&lt;expression&gt;]
+strings with a sub-sequence of characters in the main string
+name = 'udacity'
+print name[1:-1] # 'dacit'. starts from the Index position 1 till 1 character before the end of the string.
+
+</pre>
+                    <br/> find(): built-in procedure in python which outputs
+                    the first position of the target string in the search
+                    string. It outputs a -1 if it cannot find the target
+                    string.
+
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="lesson">
+        <div class="concept" id="lesson-3">
+            <div class="concept-title">Input->Function->Output</div>
+            <div class="concept-description">
+                <p>
+
+                    A function or procedure is a set of steps executed as one entity. The objective
+                    of having a function is to make the code less repetitive
+                    and also modular. When a function is used it is passed
+                    an input and gives out an output.
+                    <br/> Calling a procedure: &lt;procedure&gt;(&lt;input1&gt;,&lt;input2&gt;..)
+                    The inputs are called arguments or opernds. A function
+                    is defined using the def keyword followed by a name
+                    and a parenthesis '()'.
+                    <pre>
+    def procedure_name (input1,input2,..):
+        #steps
+        </pre>
+                    <pre>
+Defining a function or procedure:
+
+def say_hello(name):
+    print 'Welcome to udacity, my fellow udacian: '+name
+
+Calling a function or procedure:
+    say_hello('Vishali')
+</pre> The function above is called a void function
+                    because rather than returning the greeting it is printing
+                    it. Internally python returns a None to functions or
+                    procedures which do not return a value [1]. Modified
+                    say_hello()
+                    <pre>
+def say_hello(name):
+    return 'Welcome to udacity, my fellow udacian: '+name
+
+print say_hello('Vishali')
+</pre> Reference: [1] http://www.cs.ucsb.edu/~pconrad/cs8/09M/homework/H10/functions/fruitfulVsVoid.html
+
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="lesson">
+        <div class="concept" id="lesson-4">
+            <div class="concept-title">Making decisions</div>
+            <div class="concept-description">
+                <p>
+
+                    Giving programs the ability to make decisions and execute code based on
+                    the output is very important. The comparision operators
+                    in python give the ability to programs to make decisions.
+                    Below are the comparision operators provided by python,
+                    <br/>
+                    <br/>
+
+                    < - Less than, <br/> > - Greater than,
+                    <br/> == - Comparision operator,
+                    <br/>
+                    <=- Less than equal, <br/> >= - Greater than equal,
+                    <br/> != - Not equal
+                    <br/> Python also provides a way to execute code based on
+                    test expressions. The block is executed only if the
+                    text expression is True.
+                    <pre>
+if &lt;test expression&gt;
+    //block
+</pre>
+
+                    <h3 id="lesson-4-1">Using operators to make decisions.</h3> The function bigger takes in 2 numbers as arguments.
+                    The comparision operator '>' is used to decide which
+                    number is greater than the other.
+                    <pre>
+def bigger(number1, number2):
+    if number1 > number2:
+        return number1
+    return number2
+</pre> OR Logical operator: The statement below is
+                    executed if atleast one of the expressions is True.
+
+                    <pre>
+&lt;expression1&gt; OR &lt;expression2&gt;
+</pre>
+
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="lesson">
+        <div class="concept" id="lesson-5">
+            <div class="concept-title">Loops</div>
+            <div class="concept-description">
+                <p>
+
+                    Loops are a way to do things repetitively. The loop introduced below is
+                    while loop.
+                    <h3 id="lesson-5-1">While loop.</h3>
+                    <p>
+                        The while loop evaluates the block of code as long as the test expression
+                        evaluates to True. The loop stops once the expression
+                        is evaluated to False.
+                        <br/>
+
+                        <pre>
+while &lt;test expression1&gt:
+        #block
+</pre> Break: break is a special operator which
+                        jumps out of the loop as soon as it is executed
+                        and begins executing the code after the loop ends.
+                    </p>
+
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="lesson">
+        <div class="concept" id="lesson-6">
+            <div class="concept-title">Debugging</div>
+            <div class="concept-description">
+                <p>
+
+                    A proceess to identify and getting rid of bugs is called debugging. Lessons
+                    learnt,
+
+                    <ul>
+                        <li>Last line in the traceback points to the position
+                            where error occured.</li>
+                        <li>Always do a step by step modification of the example
+                            code until it does what's required.</li>
+                        <li>Always verify whether the sample code works.</li>
+                        <li>Even though the code is executing but if the code
+                            doesn't behave as expected add print statements
+                            to check what's going on.</li>
+                    </ul>
+
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="lesson">
+        <div class="concept" id="lesson-7">
+            <div class="concept-title">Lists</div>
+            <div class="concept-description">
+                <p>
+
+                    List is a sequence of anything as compared to a string which is a sequence
+                    of characters only.
+
+                    <h3 id="lesson-7-1">Defining and accessing lists.</h3>
+                    <p>
+                        <pre>
+my_list = [] #empty list
+my_list = ['u','d','a','c','i','t','y']
+my_list[2:4] #displays a subset of the list.
+my_list_1 = ['cat',1,'mat', ['rat','bat']]
+</pre> As shown in my_list_1 is a collection of
+                        elements which are numeric, string as well as lists.
+                    </p>
+
+                    <h3 id="lesson-7-2">Mutating lists.</h3>
+                    <p>
+                        Lists support mutation, that is once the list is created the object is
+                        modified.
+
+                        <pre>
+p = ['h','e','l','l','o']
+p[0]='y' #doing this is valid
+
+s = 'hello' # a string s is created.
+s[0] = 'y' #this operation is not allowed by python
+</pre> To add values to a list, append() function
+                        can be used.
+                        <pre>
+p.append('!') #appends '!' to the end of the list
+#p now has ['h', 'e', 'l', 'l', 'o', '!']
+p.append(['u','d','a','c','i','t','y']) #appends the list to the list.
+#p -> ['h', 'e', 'l', 'l', 'o', '!', ['u', 'd', 'a', 'c', 'i', 't', 'y']]
+
+#concatenation
+q = ['h', 'e', 'l', 'l', 'o']
+r = ['y', 'e', 'l', 'l', 'o']
+
+q = q + r #the '+' concatenates 2 lists and creates a new list.
+#['h', 'e', 'l', 'l', 'o', 'y', 'e', 'l', 'l', 'o'] is the resultant list.
+</pre>
+
+                    </p>
+
+                    <h3 id="lesson-7-3">Aliasing.</h3>
+                    <p>
+                        <pre>
+my_list = ['u','d','a','c','i','t','y']
+my_list_01 = my_list #When one variable's value is assigned to another this is called aliasing.
+my_list_01.append(['r','o','c','k','s'])#Since lists are mutable any change done to my_list_01 affects my_list too.
+</pre>
+                    </p>
+
+                    <h3 id="lesson-7-4">Loops on lists.</h3>
+                    <p>
+                        For loop, iterates each element in the list assign to a placeholder and
+                        evaluate the block.
+
+                        <pre>
+for &lt;placeholder&gt; in &lt;list&gt;:
+        //execute block
+</pre>
+                    </p>
+
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
